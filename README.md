@@ -1,49 +1,51 @@
-# SudoKlar — Sudoku Solver
+# ✨ SudoKlar — *Sudoku Solver*
 
-Aplicación web interactiva para jugar, validar, generar y resolver sudokus de 9 × 9. Está hecha con JavaScript puro, HTML y CSS, sin frameworks ni dependencias de ejecución.
+> **¡Un clásico, resuelto con lógica!** 🧩
 
-## Contenido del repositorio
+Aplicación web interactiva para jugar, validar, generar y resolver sudokus de **9 × 9**, hecha con JavaScript puro, HTML y CSS. *Sin frameworks ni dependencias de ejecución.*
 
-- [`sudoku-solver-js/`](./sudoku-solver-js/): aplicación, estilos, favicon, algoritmo y pruebas.
-- [`LICENSE`](./LICENSE): licencia MIT.
+## 📂 Contenido del repositorio
 
-## Funcionalidades
+- 📁 [`sudoku-solver-js/`](./sudoku-solver-js/) — *aplicación, estilos, favicon, algoritmo y pruebas.*
+- 📄 [`LICENSE`](./LICENSE) — licencia **MIT**.
 
-- Edita las casillas del tablero con los dígitos del 1 al 9; usa `0` o borrar para vaciarlas. Las pistas originales están protegidas.
-- Valida el tablero y resalta conflictos en filas, columnas y cuadros de 3 × 3.
-- Resuelve sudokus válidos y avisa cuando hay conflictos o el tablero no tiene solución.
-- Usa **Dar pista** para completar una casilla sin resolver el resto.
-- Genera sudokus aleatorios tranquilos, intermedios o desafiantes; cada tablero generado tiene solución única.
-- Incluye un ejemplo para practicar y un botón para limpiar el tablero.
-- Guarda automáticamente el tablero, el cronómetro y el mejor tiempo por dificultad en el almacenamiento local del navegador.
-- Se adapta a pantallas móviles y permite navegar por el tablero con las flechas del teclado.
+## ✨ Funcionalidades
 
-## Ejecutar en local
+- 🔢 Edita el tablero con dígitos del **1 al 9**; usa `0` o borrar para vaciar una casilla. *Las pistas originales están protegidas.*
+- ✅ Valida las reglas y resalta conflictos en filas, columnas y cuadros de **3 × 3**.
+- 🧠 Resuelve sudokus válidos y te avisa si hay conflictos o el tablero no tiene solución.
+- 💡 Usa **Dar pista** para descubrir una casilla sin resolver el resto.
+- 🎲 Genera sudokus *tranquilos, intermedios o desafiantes*, todos con solución única.
+- 📋 Carga un ejemplo para practicar o limpia el tablero para empezar de nuevo.
+- 💾 Guarda automáticamente tu tablero, cronómetro y mejor tiempo por dificultad en el navegador.
+- 📱 Se adapta a pantallas móviles y permite recorrer el tablero con las flechas del teclado.
 
-Con Python 3, desde la raíz del repositorio:
+## 🚀 Ejecutar en local
+
+Desde la raíz del repositorio, inicia un servidor local con Python:
 
 ```sh
 python -m http.server 8000 --directory sudoku-solver-js
 ```
 
-Abre `http://localhost:8000`. También puedes abrir la carpeta `sudoku-solver-js/` en Visual Studio Code y ejecutar `index.html` con Live Server. El servidor local es necesario para cargar correctamente los módulos de JavaScript.
+Abre <http://localhost:8000>. También puedes abrir `sudoku-solver-js/` en Visual Studio Code y ejecutar `index.html` con **Live Server**. *El servidor permite cargar correctamente los módulos de JavaScript.*
 
-## Ejecutar las pruebas
+## 🧪 Ejecutar las pruebas
 
-Las pruebas usan el ejecutor integrado de Node.js y no necesitan instalar dependencias. Se requiere Node.js 20 o posterior:
+Las pruebas usan el ejecutor integrado de Node.js y no necesitan dependencias adicionales. Requieren **Node.js 20 o posterior**:
 
 ```sh
 npm --prefix sudoku-solver-js test
 ```
 
-## Algoritmo
+## 🧩 ¿Cómo resuelve el Sudoku?
 
-El solver `solveSudoku(board)` valida las dimensiones, los valores y las reglas del tablero antes de aplicar backtracking. Para reducir intentos, elige primero la casilla con menos candidatos posibles y usa máscaras de bits para comprobar filas, columnas y cuadros. Devuelve una solución nueva sin modificar el tablero original, o `null` si no existe solución.
+`solveSudoku(board)` valida el tablero y aplica **backtracking**. Para reducir intentos, prueba primero la casilla con menos candidatos y utiliza máscaras de bits para comprobar filas, columnas y cuadros. Devuelve una solución nueva —*sin modificar el tablero original*— o `null` si no encuentra ninguna.
 
-## GitHub Pages
+## 🌐 Publicación en GitHub Pages
 
-La aplicación es estática. Como sus archivos están dentro de `sudoku-solver-js/`, para publicar este monorepo configura un flujo de GitHub Actions que despliegue esa carpeta como artefacto de Pages.
+La aplicación es estática. Como vive en `sudoku-solver-js/`, configura GitHub Actions para publicar esa carpeta como artefacto de Pages.
 
-## Licencia
+## 📄 Licencia
 
-Distribuido bajo la licencia [MIT](./LICENSE).
+Distribuido bajo la licencia [**MIT**](./LICENSE). ✨
